@@ -9,6 +9,7 @@ class ApplicationController < ActionController::API
                 @user = User.find(user_id)
             rescue => exception
                 render json: { message: "Error: #{exception}"}, status: :forbidden
+            end
         else
             render json: { message: "No Authorization header sent"}, status: :forbidden
         end
